@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="TELAS"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-18 09:12:14 PM"/>
+        <attribute name="created" value="dXNlcjtMQVBUT1AtU0tFUk9HSk07MjAyNS0xMS0xODswODowNjowOCBQTTsyODUy"/>
+        <attribute name="edited" value="dXNlcjtMQVBUT1AtU0tFUk9HSk07MjAyNS0xMS0xODswOToxMjoxNCBQTTsxOzI5NTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="perintah" type="String" array="False" size=""/>
+            <declare name="jumlahTugas" type="Integer" array="False" size=""/>
+            <assign variable="jumlahTugas" expression="0"/>
+            <input variable="perintah"/>
+            <if expression="perintah!=&quot;---&quot;&amp;&amp; jumlahTugas&lt;=10">
+                <then>
+                    <if expression="perintah==&quot;Add task&quot;">
+                        <then>
+                            <call expression="AddTask"/>
+                        </then>
+                        <else>
+                            <if expression="perintah==&quot;Update task status&quot;">
+                                <then>
+                                    <call expression="UpdateTaskStatus"/>
+                                </then>
+                                <else>
+                                    <if expression="perintah==&quot;Show assignment&quot;">
+                                        <then>
+                                            <call expression="ShowAssignment"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <input variable="perintah"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="AddTask" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalData" type="Integer" array="False" size=""/>
+            <assign variable="totalData" expression="0"/>
+            <declare name="perintah" type="String" array="False" size=""/>
+            <declare name="Deskripsi" type="String" array="True" size="10"/>
+            <declare name="Kode" type="String" array="True" size="10"/>
+            <declare name="Matkul" type="String" array="True" size="10"/>
+            <declare name="Dosen" type="String" array="True" size="10"/>
+            <declare name="Deadline" type="String" array="True" size="10"/>
+            <declare name="KetID" type="String" array="True" size="10"/>
+            <declare name="Kesulitan" type="Integer" array="True" size="10"/>
+            <declare name="Hari" type="Integer" array="True" size="10"/>
+            <declare name="Status" type="String" array="True" size="10"/>
+            <declare name="Prioritas" type="Real" array="True" size="10"/>
+            <if expression="totalData&lt;10">
+                <then>
+                    <input variable="Deskripsi[totalData]"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="ShowAssignment" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="UpdateTaskStatus" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
